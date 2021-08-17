@@ -1,0 +1,16 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>470</x><y>750</y><w>210</w><h>70</h></coordinates><panel_attributes>DONE TASK
+--
+taskName</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>610</y><w>210</w><h>70</h></coordinates><panel_attributes>TODO TASK
+--
+taskName
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>680</y><w>210</w><h>100</h></coordinates><panel_attributes>EMPLOYEE
+--
+empId
+firstName
+lastName
+todo
+done</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>650</y><w>210</w><h>70</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;50;190;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>730</y><w>210</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;190;60</additional_attributes></element><element><id>Text</id><coordinates><x>290</x><y>750</y><w>40</w><h>30</h></coordinates><panel_attributes>1.1
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>440</x><y>790</y><w>40</w><h>30</h></coordinates><panel_attributes>1.*
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>290</x><y>700</y><w>40</w><h>30</h></coordinates><panel_attributes>1.1
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>450</x><y>680</y><w>40</w><h>30</h></coordinates><panel_attributes>1.*
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element></diagram>
