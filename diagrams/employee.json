@@ -1,0 +1,29 @@
+{
+  "empId": "1007",
+  "firstName": "John",
+  "lastName": "Smith",
+  "todo": [
+    {
+      "taskId": "3",
+      "taskName": "Database",
+      "taskDescription": "Connect the database"
+    },
+    {
+      "taskId": "4",
+      "taskName": "Collection",
+      "taskDescription": "Create the employees collection"
+    }
+  ],
+  "done": [
+    {
+      "taskId": "1",
+      "taskName": "Employee model",
+      "taskDescription": "Build the employee model"
+    },
+    {
+      "taskId": "2",
+      "taskName": "ORD",
+      "taskDescription": "Design the ORD"
+    }
+  ]
+}
