@@ -1,5 +1,11 @@
 /*
-  Add attribution
+============================================
+; Title:  employee.js
+; Author: Professor Krasso
+; Modified By: Kevin Jones
+; Date: 16 Aug 2021
+; Description: Interface for Service object
+;===========================================
 */
 
 const mongoose = require("mongoose");

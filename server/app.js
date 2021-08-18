@@ -24,7 +24,7 @@ app.use("/", express.static(path.join(__dirname, "../dist/nodebucket")));
  */
 const port = process.env.PORT || 3000; // server port
 
-// TODO: This line will need to be replaced with your actual database connection string
+// mongo connection
 const conn =
   "mongodb+srv://nodebucket_user:test@buwebdev-cluster-1.a6jtu.mongodb.net/nodebucket?retryWrites=true&w=majority";
 
