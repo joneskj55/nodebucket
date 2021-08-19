@@ -30,7 +30,7 @@ export class SigninComponent implements OnInit {
     private router: Router
   ) {}
 
-  //commensts
+  // form validation
   ngOnInit(): void {
     this.form = this.fb.group({
       empId: [
@@ -43,15 +43,17 @@ export class SigninComponent implements OnInit {
     });
   }
 
-  // comments
+  // signin
   login(): void {
     const empId = this.form.controls['empId'].value;
+    // get the empId from the form
     this.http.get('/api/employees/' + empId).subscribe((res) => {
       if (res) {
-        this.cookieService.set('session_user', empId, 1); // comments
-        this.router.navigate(['/']);
+        // set the cookie
+        this.cookieService.set('session_user', empId, 1);
+        this.router.navigate(['/']); // redirect to the home page
       } else {
-        this.error = 'Invalid Employee ID';
+        this.error = 'Invalid Employee ID'; // set the error message
       }
     });
   }

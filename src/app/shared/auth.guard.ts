@@ -22,20 +22,18 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
+  // use the router to navigate to the signin page if the user is not authenticated
   constructor(private router: Router, private cookieService: CookieService) {}
 
-  //comments
-  /**
-  @param
-  */
-
+  // check if the user is authenticated
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const sessionUser = this.cookieService.get('session_user');
 
-    //comments
+    //if the user is not authenticated, redirect to the signin page
     if (sessionUser) {
-      return true; //code comments
+      return true; // allow navigation
     } else {
+      // redirect to the signin page
       this.router.navigate(['/session/signin']);
       return false;
     }
