@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  signin.component.ts
+; Author: Professor Krasso
+; Modified by: Kevin Jones
+; Date: 19 Aug 2021
+; Description: Sign-in component file
+;===========================================
+*/
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';

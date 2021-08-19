@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  app-routing.module.ts
+; Author: Kevin Jones
+; Date: 19 Aug 2021
+; Description: Routing file
+;===========================================
+*/
+
 import { HomeComponent } from './pages/home/home.component';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { NgModule } from '@angular/core';

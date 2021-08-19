@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  app.module.ts
+; Author: Kevin Jones
+; Date: 19 Aug 2021
+; Description: App module
+;===========================================
+*/
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 

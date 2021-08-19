@@ -1,13 +1,22 @@
+/*
+============================================
+; Title:  auth.guard.ts
+; Author: Kevin Jones
+; Date: 19 Aug 2021
+; Description: Authentication Guard file
+;===========================================
+*/
+
 import { Injectable } from '@angular/core';
 import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
+  Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
