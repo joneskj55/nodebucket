@@ -1,9 +1,8 @@
 /*
 ============================================
 ; Title:  app.module.ts
-; Author: Professor Krasso
-; Modified by: Kevin Jones
-; Date: 18 Aug 2021
+; Author: Kevin Jones
+; Date: 19 Aug 2021
 ; Description: App module
 ;===========================================
 */
@@ -24,10 +23,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -35,8 +35,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     BaseLayoutComponent,
     AuthLayoutComponent,
-    SignInComponent,
-    NotFoundComponent
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,13 +46,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatFormFieldModule,
     MatInputModule,
+    MatFormFieldModule,
+    MatFormFieldModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
