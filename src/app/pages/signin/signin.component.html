@@ -9,17 +9,15 @@
  -->
 
 <div fxLayout="column">
-  <div fxFlex *ngIf="error">
-    {{ error }}
-  </div>
-
-  <mat-card fxFlex class="signIn-container">
+  <mat-card fxFlex class="mat-elevation-z8 signIn-container">
     <mat-card-title>Employee Sign In</mat-card-title>
     <mat-card-subtitle
       >You must enter a valid employee ID to continue</mat-card-subtitle
     >
+
+    <!-- Sign-in form -->
     <form [formGroup]="form" (ngSubmit)="login(); form.reset()">
-      <mat-card-content>
+      <mat-card-content class="mat-elevation-z0">
         <mat-form-field fxFlex appearance="fill">
           <input
             type="text"
@@ -27,6 +25,28 @@
             [formControl]="form.controls['empId']"
             placeholder="Employee ID"
           />
+
+          <!-- Validation/ error handling -->
+          <mat-error
+            *ngIf="
+              form.controls['empId'].hasError('required') &&
+              form.controls['empId'].touched
+            "
+          >
+            Employee ID is a required field.
+          </mat-error>
+          <mat-error
+            *ngIf="
+              form.controls['empId'].hasError('pattern') &&
+              form.controls['empId'].touched
+            "
+          >
+            Employee ID must be a numerical value.
+          </mat-error>
+          <mat-error *ngIf="error">{{ error }}</mat-error>
+          <mat-hint style="color: red"
+            >*Use either 1007, 1008, 1009, 1010, 1011, or 1012</mat-hint
+          >
         </mat-form-field>
       </mat-card-content>
       <mat-card-actions>
