@@ -56,7 +56,7 @@ router.get("/:empId/tasks", async (req, res) => {
   try {
     Employee.findOne(
       { empId: req.params.empId },
-      "empId to do done",
+      "empId todo done",
       function (err, employee) {
         if (err) {
           console.log(err);
