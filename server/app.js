@@ -1,3 +1,13 @@
+/*
+==========================================
+; Title: app.js
+; Author: Professor Krasso
+; Modified by: Kevin Jones
+; Date: 16 Aug 2021
+; Description: App file for the server
+; ========================================
+*/
+
 /**
  * Require statements
  */
