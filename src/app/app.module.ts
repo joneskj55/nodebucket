@@ -32,6 +32,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { CreateTaskDialogComponent } from './shared/create-task-dialog/create-task-dialog.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AboutComponent } from './pages/about/about.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     SigninComponent,
     CreateTaskDialogComponent,
     ContactComponent,
+    AboutComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     MatMenuModule,
     MatDialogModule,
     MatDividerModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
