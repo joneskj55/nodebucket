@@ -137,7 +137,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  // delete function for the todo list
+  // delete function for the list
   deleteTask(taskId: string): void {
     // confirm the user wants to delete the task
     if (confirm('Are you sure you want to delete this task?')) {
@@ -166,7 +166,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  // update function for the todo list
+  // update function for the task list
   private updateTaskList(empId: number, dodo: Item[], done: Item[]): void {
     // make a call to the task service to update the task list
     this.taskService.updateTask(this.empId, this.todo, this.done).subscribe(
