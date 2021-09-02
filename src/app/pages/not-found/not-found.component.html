@@ -1,1 +1,37 @@
-<p>not-found works!</p>
+<!--
+============================================
+; Title:  not-found.component.html
+; Author: Kevin Jones
+; Date: 2 Sep 2021
+; Description: Not found component HTML file
+;===========================================
+ -->
+
+<main class="flex-grow mt-20">
+  <h1 class="text-5xl md:text-6xl font-bold text-center">
+    There seems to have been an error.
+  </h1>
+
+  <div class="container mx-auto px-6">
+    <div class="sm:flex sm:mt-8">
+      <div
+        class="
+          mt-8
+          sm:mt-0 sm:w-full sm:px-8
+          flex flex-col
+          md:flex-row
+          justify-around
+        "
+      >
+        <div class="flex flex-col">
+          <img src="./assets/404.webp" /><br />
+          <h2 class="text-3xl md:text-4xl font-bold text-center">
+            Click the button in order to return to nodebucket.
+          </h2>
+          <br />
+          <button routerLink="/" mat-flat-button color="accent">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
