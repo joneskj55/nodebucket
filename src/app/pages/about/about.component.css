@@ -1,0 +1,23 @@
+/*
+============================================
+; Title:  about.component.css
+; Author: Kevin Jones
+; Date: 2 Sep 2021
+; Description: About component CSS file
+;===========================================
+*/
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+}
