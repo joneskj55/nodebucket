@@ -15,6 +15,11 @@ import { CookieService } from 'ngx-cookie-service';
 import { TaskService } from './../../shared/services/task.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTaskDialogComponent } from './../../shared/create-task-dialog/create-task-dialog.component';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-home',
@@ -99,5 +104,87 @@ export class HomeComponent implements OnInit {
         );
       }
     });
+  }
+
+  // drop function for the todo list
+  drop(event: CdkDragDrop<any[]>) {
+    // if the item is dropped in the todo list
+    if (event.previousContainer === event.container) {
+      // move the item in the todo list to the done list and update the task list in the database
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+
+      console.log('Reordered the existing list of task items.');
+
+      // update the task list in the database with the new order of the todo list
+      this.updateTaskList(this.empId, this.todo, this.done);
+      // if the item is dropped in the done list
+    } else {
+      // move the item in the done list to the todo list and update the task list in the database
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+
+      console.log('Moved task item into the other container');
+      // update the task list in the database with the new order of the done list
+      this.updateTaskList(this.empId, this.todo, this.done);
+    }
+  }
+
+  // delete function for the list
+  deleteTask(taskId: string): void {
+    // confirm the user wants to delete the task
+    if (confirm('Are you sure you want to delete this task?')) {
+      // make a call to the task service to delete the task
+      if (taskId) {
+        console.log(`Task item: ${taskId} was deleted`);
+
+        this.taskService.deleteTask(this.empId, taskId).subscribe(
+          // if the server response is successful
+          (res) => {
+            // set the todo and done arrays to the server response
+            this.employee = res.data;
+          },
+          // if the server response is not successful
+          (err) => {
+            // log the error
+            console.log(err);
+          },
+          () => {
+            // set the todo and done arrays to the server response
+            this.todo = this.employee.todo;
+            this.done = this.employee.done;
+          }
+        );
+      }
+    }
+  }
+
+  // update function for the task list
+  private updateTaskList(empId: number, dodo: Item[], done: Item[]): void {
+    // make a call to the task service to update the task list
+    this.taskService.updateTask(this.empId, this.todo, this.done).subscribe(
+      // if the server response is successful
+      (res) => {
+        // set the todo and done arrays to the server response
+        this.employee = res.data;
+      },
+      // if the server response is not successful
+      (err) => {
+        // log the error
+        console.log(err);
+      },
+      () => {
+        // set the todo and done arrays to the server response
+        this.todo = this.employee.todo;
+        this.done = this.employee.done;
+      }
+    );
   }
 }
