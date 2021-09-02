@@ -103,6 +103,7 @@ router.post("/:empId/tasks", async (req, res) => {
             });
           } else {
             console.log(updatedEmployee);
+            res.json(updatedEmployee);
           }
         });
       }
@@ -210,7 +211,7 @@ router.delete("/:empId/tasks/:taskId", async (req, res) => {
               res.status(501).send(deleteTodoItemMongoErrorResponse.toObject());
               // if the database is able to find the employee by id then update the task
             } else {
-              console.log(updatedToDoItemEmployee);
+              console.log(updatedTodoItemEmployee);
               const deleteTodoItemSuccessResponse = new BaseResponse(
                 "200",
                 "Item removed from Todo array",
