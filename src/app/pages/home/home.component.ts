@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     private cookieService: CookieService,
     private dialog: MatDialog
   ) {
-    this.empId = parseInt(this.cookieService.get('session_user'), 10);
+    this.empId = parseInt(this.cookieService.get('session_user'));
 
     // make call to task service findAllTasks
     this.taskService.findAllTasks(this.empId).subscribe(
