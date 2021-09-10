@@ -46,3 +46,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.task-card:hover {
+  background: #f5f5f5;
+}
