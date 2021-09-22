@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: main-awake
+      - name: awake-action
         uses: devpolo/awake-action@v1
         with:
           url: "https://jones-nodebucket.herokuapp.com/"
