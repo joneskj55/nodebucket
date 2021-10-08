@@ -11,6 +11,7 @@
 /**
  * Require statements
  */
+const compression = require("compression");
 const express = require("express");
 const http = require("http");
 const morgan = require("morgan");
@@ -23,6 +24,7 @@ const EmployeeAPI = require("./routes/employee-api");
  * App configurations
  */
 let app = express();
+app.use(compression()); // compress all responses
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
