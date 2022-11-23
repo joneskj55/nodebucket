@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider; ng build",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "server": "nodemon ./server/app.js",
-    "start": "export NODE_OPTIONS=--openssl-legacy-provider; ng serve",
+    "start": "ng serve",
     "localhost": "ng build && node ./server/app.js",
     "heroku-postbuild": "ng build --configuration=production"
   },
