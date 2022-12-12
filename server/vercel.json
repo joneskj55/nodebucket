@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "nodebucket",
+  "builds": [
+    { "src": "app.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "app.js", "dest": "/app.js" }
+  ]
+}
